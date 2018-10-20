@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>Своя игра</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body onload="loadMain()">
+<script>
+			function loadMain() {
+			  var table = sessionStorage.getItem('questionsTableData');
+			  if (table !== null && table !== ""){
+				console.log("We're on main page!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				//$('#tableWrapper').replaceWith(table);
+				console.log(table);
+				var indexes = table.split(";");
+				var tableCells = document.getElementById("questionsTable").getElementsByTagName("td");
+				indexes.forEach(function(item, i, indexes) {
+				  tableCells[parseInt(item)].style.backgroundColor = "yellow";
+				});
+			  }
+			  
+			  document.getElementById("tableWrapper").style.display = "";
+			  document.getElementById("question").style.display = "none";
+			}
+
+</script>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="QuestionsTableProcessor.js"></script>
+
+<div class="site-wrapper">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#home" onclick="clickMain()">На главную</a>
+                <script>
+			function clickMain() {
+			  var table = sessionStorage.getItem('questionsTableData');
+			  if (table !== null && table !== ""){
+				console.log("We're on main page");
+				//$('#question').replaceWith(table);
+				console.log(table);
+				var indexes = table.split(";");
+				var tableCells = document.getElementById("questionsTable").getElementsByTagName("td");
+				indexes.forEach(function(item, i, indexes) {
+				  tableCells[parseInt(item)].style.backgroundColor = "yellow";
+				});
+			  }
+			  
+			  document.getElementById("tableWrapper").style.display = "";
+			  document.getElementById("question").style.display = "none";
+			}
+
+                </script>
+            </div>
+        </div>
+    </nav>
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="inner cover">
+                <img src="logoCut.jpg" alt="Logo" style="width:325px;height:200px;padding:30px;"/>
+            </div>
+
+            <div id="questionWrapper">
+                <h1 id="question" style="display:none;" class="cover-heading"></h1>
+            </div>
+
+            <div class="inner cover" id="tableWrapper">
+                <table class="table table-bordered" id="questionsTable">
+                    <tbody style="font-size: 22px">
+                    <tr>
+                        <th scope="row">В мире животных</th>
+                        <td><a href="#C1Q1">10</a></td>
+                        <td><a href="#C1Q2">20</a></td>
+                        <td><a href="#C1Q3">30</a></td>
+                        <td><a href="#C1Q4">40</a></td>
+                        <td><a href="#C1Q5">50</a></td>
+                        <td><a href="#C1Q6">60</a></td>
+                        <td><a href="#C1Q7">70</a></td>
+                        <td><a href="#C1Q8">80</a></td>
+                        <td><a href="#C1Q9">90</a></td>
+                        <td><a href="#C1Q10">100</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">География</th>
+                        <td><a href="#C2Q1">10</a></td>
+                        <td><a href="#C2Q2">20</a></td>
+                        <td><a href="#C2Q3">30</a></td>
+                        <td><a href="#C2Q4">40</a></td>
+                        <td><a href="#C2Q5">50</a></td>
+                        <td><a href="#C2Q6">60</a></td>
+                        <td><a href="#C2Q7">70</a></td>
+                        <td><a href="#C2Q8">80</a></td>
+                        <td><a href="#C2Q9">90</a></td>
+                        <td><a href="#C2Q10">100</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Вопросы от Романа Михайловича</th>
+                        <td><a href="#C3Q1">10</a></td>
+                        <td><a href="#C3Q2">20</a></td>
+                        <td><a href="#C3Q3">30</a></td>
+                        <td><a href="#C3Q4">40</a></td>
+                        <td><a href="#C3Q5">50</a></td>
+                        <td><a href="#C3Q6">60</a></td>
+                        <td><a href="#C3Q7">70</a></td>
+                        <td><a href="#C3Q8">80</a></td>
+                        <td><a href="#C3Q9">90</a></td>
+                        <td><a href="#C3Q10">100</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Угадай фильм по одному кадру</th>
+                        <td><a href="#C4Q1">10</a></td>
+                        <td><a href="#C4Q2">20</a></td>
+                        <td><a href="#C4Q3">30</a></td>
+                        <td><a href="#C4Q4">40</a></td>
+                        <td><a href="#C4Q5">50</a></td>
+                        <td><a href="#C4Q6">60</a></td>
+                        <td><a href="#C4Q7">70</a></td>
+                        <td><a href="#C4Q8">80</a></td>
+                        <td><a href="#C4Q9">90</a></td>
+                        <td><a href="#C4Q10">100</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">История</th>
+                        <td><a href="#C5Q1">10</a></td>
+                        <td><a href="#C5Q2">20</a></td>
+                        <td><a href="#C5Q3">30</a></td>
+                        <td><a href="#C5Q4">40</a></td>
+                        <td><a href="#C5Q5">50</a></td>
+                        <td><a href="#C5Q6">60</a></td>
+                        <td><a href="#C5Q7">70</a></td>
+                        <td><a href="#C5Q8">80</a></td>
+                        <td><a href="#C5Q9">90</a></td>
+                        <td><a href="#C5Q10">100</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Музыка</th>
+                        <td><a href="#C6Q1">10</a></td>
+                        <td><a href="#C6Q2">20</a></td>
+                        <td><a href="#C6Q3">30</a></td>
+                        <td><a href="#C6Q4">40</a></td>
+                        <td><a href="#C6Q5">50</a></td>
+                        <td><a href="#C6Q6">60</a></td>
+                        <td><a href="#C6Q7">70</a></td>
+                        <td><a href="#C6Q8">80</a></td>
+                        <td><a href="#C6Q9">90</a></td>
+                        <td><a href="#C6Q10">100</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Спорт</th>
+                        <td><a href="#C7Q1">10</a></td>
+                        <td><a href="#C7Q2">20</a></td>
+                        <td><a href="#C7Q3">30</a></td>
+                        <td><a href="#C7Q4">40</a></td>
+                        <td><a href="#C7Q5">50</a></td>
+                        <td><a href="#C7Q6">60</a></td>
+                        <td><a href="#C7Q7">70</a></td>
+                        <td><a href="#C7Q8">80</a></td>
+                        <td><a href="#C7Q9">90</a></td>
+                        <td><a href="#C7Q10">100</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Саундтреки</th>
+                        <td><a href="#C8Q1">10</a></td>
+                        <td><a href="#C8Q2">20</a></td>
+                        <td><a href="#C8Q3">30</a></td>
+                        <td><a href="#C8Q4">40</a></td>
+                        <td><a href="#C8Q5">50</a></td>
+                        <td><a href="#C8Q6">60</a></td>
+                        <td><a href="#C8Q7">70</a></td>
+                        <td><a href="#C8Q8">80</a></td>
+                        <td><a href="#C8Q9">90</a></td>
+                        <td><a href="#C8Q10">100</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Цитаты</th>
+                        <td><a href="#C9Q1">10</a></td>
+                        <td><a href="#C9Q2">20</a></td>
+                        <td><a href="#C9Q3">30</a></td>
+                        <td><a href="#C9Q4">40</a></td>
+                        <td><a href="#C9Q5">50</a></td>
+                        <td><a href="#C9Q6">60</a></td>
+                        <td><a href="#C9Q7">70</a></td>
+                        <td><a href="#C9Q8">80</a></td>
+                        <td><a href="#C9Q9">90</a></td>
+                        <td><a href="#C9Q10">100</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!--<div class="mastfoot">
+              <div class="inner">
+                <p>Организаторы: <a href="https://vk.com/xudzik96">Женя Худзик</a> и <a href="https://vk.com/bikovkolyan">Николай Быков</a>.</p>
+              </div>
+            </div>-->
+
+        </div>
+
+        <div>
+            <img src="logoProf.png" alt="profLogo" style="width:85px;height:135px;" align="middle"/>
+            <img src="logoTKM.png" alt="logoTKM" style="width:219px;height:135px;" align="middle"/>
+            <!--<img src="logoTKM.png" alt="logoTKM" style="width:212px;height:135px;" align="middle"/>-->
+            <img src="logoKHTF.png" alt="logoKHTF" style="width:135px;height:135px;" align="middle"/>
+            <div>
+
+            </div>
+
+        </div>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+        </script>
+        <script src="dist/js/bootstrap.min.js"></script>
+</body>
+</html>
