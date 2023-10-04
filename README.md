@@ -1,1 +1,1 @@
-# OnePageGame
+# one-page-game
